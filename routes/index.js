@@ -20,6 +20,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/send',async function(req,res){
+  res.render('index');
   const createdmessage=await message.create({
     name:req.body.name,
     email:req.body.email,
@@ -28,7 +29,6 @@ router.post('/send',async function(req,res){
   });
 
   console.log(createdmessage);
-  res.render('index');
 
   // Set up email options (what will be sent to your email)
   const mailOptions = {
